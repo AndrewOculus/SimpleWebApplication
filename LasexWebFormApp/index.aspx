@@ -53,6 +53,14 @@
                 </asp:TableCell>
             </asp:TableRow>
             
+               
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Button ID="Button7" runat="server" Text="Администрирование" Width="250px" Height="50px" OnClick="Button7_OnClick"/>
+                </asp:TableCell>
+            </asp:TableRow>
+               
+
             <asp:TableRow>
                 <asp:TableCell>
                     <asp:Button ID="Button6" runat="server" Text="Выйти" Width="50px" Height="50px" OnClick="Button6_OnClick"/>

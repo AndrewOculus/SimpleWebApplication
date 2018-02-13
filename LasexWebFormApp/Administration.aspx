@@ -53,6 +53,8 @@
                 <asp:Parameter Name="original_Permission" Type="String" />
             </UpdateParameters>
         </asp:SqlDataSource>
+        
+        <asp:Button ID="Button2" runat="server" Text="Back" OnClick="Button2_OnClick" />
     </form>
 </body>
 </html>

@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LasexWebFormApp.Models;
 
 namespace LasexWebFormApp
 {
@@ -24,9 +25,9 @@ namespace LasexWebFormApp
 
         protected async void OnClick(object sender, EventArgs e)
         {
-            Dictionary<string, string> db = new Dictionary<string, string>();
+            Dictionary<string, User> db = new Dictionary<string, User>();
 
-            SqlCommand getUsersCredCmd = new SqlCommand("SELECT [Login], [Password] FROM [Users]", sqlConnection);
+            SqlCommand getUsersCredCmd = new SqlCommand("SELECT [Login], [Password], [Permission] FROM [Users]", sqlConnection);
 
             SqlDataReader sqlReader = null;
 
@@ -35,7 +36,7 @@ namespace LasexWebFormApp
                 sqlReader = await getUsersCredCmd.ExecuteReaderAsync();
                 while (await sqlReader.ReadAsync())
                 {
-                    db.Add(Convert.ToString(sqlReader["Login"].ToString()), Convert.ToString(sqlReader["Password"].ToString()));
+                    db.Add(Convert.ToString(sqlReader["Login"].ToString()),new User(Convert.ToString(sqlReader["Password"].ToString()) , Convert.ToString(sqlReader["Permission"].ToString())));
                 }
             }
             catch
@@ -46,12 +47,14 @@ namespace LasexWebFormApp
                 sqlReader?.Close();
             }
 
-            if (TextBox2.Text == db[TextBox1.Text])
+            if (TextBox2.Text == db[TextBox1.Text].password)
             {
                 HttpCookie login = new HttpCookie("login" , TextBox1.Text);
                 HttpCookie sign = new HttpCookie("sign", SignGenerator.GetSign(TextBox1.Text+"lasex"));
+                HttpCookie permission = new HttpCookie("permission", db[TextBox1.Text].permission);
                 Response.Cookies.Add(login);
                 Response.Cookies.Add(sign);
+                Response.Cookies.Add(permission);
 
                 Response.Redirect("index.aspx", false);
             }

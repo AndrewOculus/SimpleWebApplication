@@ -27,7 +27,7 @@ namespace LasexWebFormApp
                     return;
                 }
             }
-            Response.Redirect("~/Login.aspx", false);
+            Response.Redirect("~/index.aspx", false);
         }
 
         protected async void Button1_OnClick(object sender, EventArgs e)
@@ -42,6 +42,11 @@ namespace LasexWebFormApp
             await regUser.ExecuteNonQueryAsync();
 
             //Response.Redirect("Login.aspx", false);
+        }
+
+        protected void Button2_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("~/index.aspx", false);
         }
     }
 }

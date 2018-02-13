@@ -13,11 +13,65 @@ namespace LasexWebFormApp
         {
             HttpCookie login = Request.Cookies["login"];
             HttpCookie sign = Request.Cookies["sign"];
+            HttpCookie permission = Request.Cookies["permission"];
+
+
 
             if (login != null && sign != null)
             {
                 if (sign.Value == SignGenerator.GetSign(login.Value + "lasex"))
                 {
+
+                    if (login.Value != "admin")
+                        Button7.Enabled = false;
+
+                    try
+                    {
+                        string str = permission.Value;
+                        int count = 0;
+                        foreach (char ch in str)
+                        {
+                            string s = ch.ToString();
+
+                            switch (count)
+                            {
+                                case 0:
+                                    if (int.Parse(s) == 0)
+                                        Button1.Enabled = false;
+                                    break;
+
+                                case 1:
+                                    if (int.Parse(s) == 0)
+                                        Button2.Enabled = false;
+                                    break;
+
+                                case 2:
+                                    if (int.Parse(s) == 0)
+                                        Button3.Enabled = false;
+                                    break;
+
+                                case 3:
+                                    if (int.Parse(s) == 0)
+                                        Button4.Enabled = false;
+                                    break;
+
+                                case 4:
+                                    if (int.Parse(s) == 0)
+                                        Button5.Enabled = false;
+                                    break;
+                            }
+
+                            ++count;
+
+                        }
+                    }
+                    catch 
+                    {
+
+                    }
+
+
+
                     Label1.Text = "Ваш логин: " + login.Value;
                     return;
                 }
@@ -61,6 +115,11 @@ namespace LasexWebFormApp
         protected void Button6_OnClick(object sender, EventArgs e)
         {
             Response.Redirect("Logout.aspx");
+        }
+
+        protected void Button7_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Administration.aspx");
         }
     }
 }

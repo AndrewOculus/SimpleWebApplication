@@ -13,12 +13,18 @@ namespace LasexWebFormApp
         {
             HttpCookie login = new HttpCookie("login" , string.Empty);
             HttpCookie sign = new HttpCookie("sign",string.Empty);
+            HttpCookie permission = new HttpCookie("permission", string.Empty);
+
 
             login.Expires = DateTime.Now.AddDays(-1);
             sign.Expires = DateTime.Now.AddDays(-1);
+            permission.Expires = DateTime.Now.AddDays(-1);
+
 
             Response.Cookies.Add(login);
             Response.Cookies.Add(sign);
+            Response.Cookies.Add(permission);
+            
 
             Response.Redirect("Login.aspx");
         }
