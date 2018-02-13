@@ -20,7 +20,7 @@ namespace LasexWebFormApp
 
             if (login != null && sign != null)
             {
-                if (sign.Value == SignGenerator.GetSign(login.Value + "bytepp"))
+                if (sign.Value == SignGenerator.GetSign(login.Value + "lasex"))
                 {
                     string connectionString = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
                     sqlConnection = new SqlConnection(connectionString);

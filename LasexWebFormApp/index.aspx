@@ -25,31 +25,31 @@
 
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Button ID="Button1" runat="server" Text="Журнал эксплуатации оборудования (станок полировальный ПСП-2Ш ТУ28.49.11-001-50850821-2017)" Width="900px" Height="50px" OnClick="Button1_OnClick"/>
+                    <asp:Button ID="Button1" runat="server" Text="Журнал эксплуатации оборудования (станок полировальный ПСП-2Ш ТУ28.49.11-001-50850821-2017)" Width="700px" Height="50px" OnClick="Button1_OnClick"/>
                 </asp:TableCell>
             </asp:TableRow>
             
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Button ID="Button2" runat="server" Text="Журнал эксплуатации оборудования (станок полировально-доводочный 3ПД-350)" Width="900px" Height="50px" OnClick="Button2_OnClick"/>
+                    <asp:Button ID="Button2" runat="server" Text="Журнал эксплуатации оборудования (станок полировально-доводочный 3ПД-350)" Width="700px" Height="50px" OnClick="Button2_OnClick"/>
                 </asp:TableCell>
             </asp:TableRow>
             
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Button ID="Button3" runat="server" Text="Журнал эксплуатации оборудования (интерферометр OptoTL-250 ЕТВС.58901205)" Width="900px" Height="50px" OnClick="Button3_OnClick"/>
+                    <asp:Button ID="Button3" runat="server" Text="Журнал эксплуатации оборудования (интерферометр OptoTL-250 ЕТВС.58901205)" Width="700px" Height="50px" OnClick="Button3_OnClick"/>
                 </asp:TableCell>
             </asp:TableRow>
             
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Button ID="Button4" runat="server" Text="Журнал эксплуатации оборудования (профилометр ZYGO NewView 700)" Width="900px" Height="50px" OnClick="Button4_OnClick"/>
+                    <asp:Button ID="Button4" runat="server" Text="Журнал эксплуатации оборудования (профилометр ZYGO NewView 700)" Width="700px" Height="50px" OnClick="Button4_OnClick"/>
                 </asp:TableCell>
             </asp:TableRow>
             
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Button ID="Button5" runat="server" Text="Журнал эксплуатации оборудования (микроскоп STEMI 508)" Width="900px" Height="50px" OnClick="Button5_OnClick"/>
+                    <asp:Button ID="Button5" runat="server" Text="Журнал эксплуатации оборудования (микроскоп STEMI 508)" Width="700px" Height="50px" OnClick="Button5_OnClick"/>
                 </asp:TableCell>
             </asp:TableRow>
             

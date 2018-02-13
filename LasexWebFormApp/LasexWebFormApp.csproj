@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Administration.aspx" />
     <Content Include="App_Data\LasexDB.mdf" />
     <Content Include="App_Data\LasexDB_log.ldf">
       <DependentUpon>LasexDB.mdf</DependentUpon>
@@ -90,6 +91,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administration.aspx.cs">
+      <DependentUpon>Administration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration.aspx.designer.cs">
+      <DependentUpon>Administration.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EquipmentOperationLog.aspx.cs">
       <DependentUpon>EquipmentOperationLog.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -139,6 +147,7 @@
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignGenerator.cs" />
     <Compile Include="TheEquipmentOperationLogProfilometer.aspx.cs">

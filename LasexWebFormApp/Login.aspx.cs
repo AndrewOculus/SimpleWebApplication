@@ -49,7 +49,7 @@ namespace LasexWebFormApp
             if (TextBox2.Text == db[TextBox1.Text])
             {
                 HttpCookie login = new HttpCookie("login" , TextBox1.Text);
-                HttpCookie sign = new HttpCookie("sign", SignGenerator.GetSign(TextBox1.Text+"bytepp"));
+                HttpCookie sign = new HttpCookie("sign", SignGenerator.GetSign(TextBox1.Text+"lasex"));
                 Response.Cookies.Add(login);
                 Response.Cookies.Add(sign);
 
